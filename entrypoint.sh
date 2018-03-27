@@ -1,3 +1,7 @@
 #!/bin/sh
 
-make $@
+if [ "$#" -ne 0 ]; then
+  exec $@
+fi
+
+exec ipxe-builder
